@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 function Navbar({ darkMode, setDarkMode, onResumeClick }) {
   const links = [
@@ -36,15 +37,20 @@ function Navbar({ darkMode, setDarkMode, onResumeClick }) {
 
       <div className="nav-actions">
         <button
+          type="button"
           className="theme-button"
           onClick={() => setDarkMode(!darkMode)}
-          title="Toggle theme"
-          aria-label="Toggle theme"
+          title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+          aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
         >
-          {darkMode ? "☀" : "☾"}
+          {darkMode ? <FiSun size={18} /> : <FiMoon size={18} />}
         </button>
 
-        <button className="nav-resume" onClick={onResumeClick}>
+        <button
+          type="button"
+          className="nav-resume"
+          onClick={onResumeClick}
+        >
           Resume
         </button>
       </div>

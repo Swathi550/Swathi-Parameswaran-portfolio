@@ -1,4 +1,22 @@
 import { useEffect, useState } from "react";
+import {
+  FiActivity,
+  FiArrowUpRight,
+  FiAward,
+  FiBarChart2,
+  FiCheck,
+  FiCode,
+  FiDatabase,
+  FiEye,
+  FiExternalLink,
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiMessageCircle,
+  FiStar,
+  FiX,
+  FiZap,
+} from "react-icons/fi";
 import { motion, AnimatePresence } from "motion/react";
 import Navbar from "./components/Navbar";
 import "./App.css";
@@ -13,7 +31,7 @@ const projects = [
       "The project combines machine learning with Ayurveda to predict diseases based on symptoms and provide personalized Ayurvedic recommendations. The application was developed using Python, Machine Learning and Streamlit.",
     technologies: ["Python", "Machine Learning", "Streamlit"],
     github: "https://github.com/Swathi550/ayucare-replit",
-    icon: "🌿",
+    icon: FiActivity,
   },
   {
     title: "Business Sales Dashboard",
@@ -24,7 +42,7 @@ const projects = [
       "The dashboard presents business sales information through KPI cards and visual analytics. It covers sales, profit, quantity, orders, categories, regions and other business insights using Power BI and CSV data.",
     technologies: ["Power BI", "Data Analysis", "CSV"],
     github: "https://github.com/Swathi550/FUTURE_DS_01",
-    icon: "📊",
+    icon: FiBarChart2,
   },
   {
     title: "College Event Feedback Analysis",
@@ -35,7 +53,7 @@ const projects = [
       "This project analyzes college event feedback using Python and data analysis techniques. It explores ratings, comments, sentiment and satisfaction trends using Pandas and TextBlob.",
     technologies: ["Python", "Pandas", "TextBlob"],
     github: "https://github.com/Swathi550/FUTURE_DS_03",
-    icon: "💬",
+    icon: FiMessageCircle,
   },
   {
     title: "Titanic Dataset EDA",
@@ -46,7 +64,7 @@ const projects = [
       "The project focuses on exploring and understanding the Titanic dataset using Python, Pandas and exploratory data analysis techniques.",
     technologies: ["Python", "Pandas", "EDA"],
     github: "https://github.com/Swathi550/EDA-on-Titanic-Dataset",
-    icon: "🚢",
+    icon: FiDatabase,
   },
 ];
 
@@ -120,7 +138,9 @@ function App() {
   const [visitorCount, setVisitorCount] = useState(1);
 
   useEffect(() => {
-    document.body.className = darkMode ? "dark-theme" : "light-theme";
+    document.body.className = darkMode
+      ? "dark-theme"
+      : "light-theme";
   }, [darkMode]);
 
   useEffect(() => {
@@ -221,7 +241,8 @@ function App() {
             transition={{ duration: 0.8 }}
           >
             <span className="eyebrow">
-              ✦ AI / ML • DATA • SOFTWARE
+              <FiZap />
+              AI / ML • DATA • SOFTWARE
             </span>
 
             <h1>
@@ -243,7 +264,7 @@ function App() {
             <div className="hero-buttons">
               <a href="#projects" className="primary-button">
                 Explore My Work
-                <span>↗</span>
+                <FiArrowUpRight />
               </a>
 
               <button
@@ -306,7 +327,10 @@ function App() {
             className="quick-card"
             whileHover={{ y: -5 }}
           >
-            <span className="quick-icon">🤖</span>
+            <span className="quick-icon">
+              <FiActivity />
+            </span>
+
             <div>
               <strong>AI & ML</strong>
               <p>Intelligent solutions</p>
@@ -317,7 +341,10 @@ function App() {
             className="quick-card"
             whileHover={{ y: -5 }}
           >
-            <span className="quick-icon">📈</span>
+            <span className="quick-icon">
+              <FiBarChart2 />
+            </span>
+
             <div>
               <strong>Data</strong>
               <p>Insights & analytics</p>
@@ -328,7 +355,10 @@ function App() {
             className="quick-card"
             whileHover={{ y: -5 }}
           >
-            <span className="quick-icon">💻</span>
+            <span className="quick-icon">
+              <FiCode />
+            </span>
+
             <div>
               <strong>Development</strong>
               <p>Modern applications</p>
@@ -339,7 +369,10 @@ function App() {
             className="quick-card"
             whileHover={{ y: -5 }}
           >
-            <span className="quick-icon">🚀</span>
+            <span className="quick-icon">
+              <FiZap />
+            </span>
+
             <div>
               <strong>Learning</strong>
               <p>Always exploring</p>
@@ -349,7 +382,10 @@ function App() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="section content-section">
+      <section
+        id="about"
+        className="section content-section"
+      >
         <div className="container">
           <SectionHeading
             eyebrow="01 / ABOUT"
@@ -403,7 +439,9 @@ function App() {
               <div className="info-card">
                 <span>EDUCATION</span>
                 <strong>B.Tech AI & ML</strong>
-                <p>Vidya Academy of Science and Technology</p>
+                <p>
+                  Vidya Academy of Science and Technology
+                </p>
               </div>
 
               <div className="info-card">
@@ -433,19 +471,19 @@ function App() {
 
           <div className="expertise-grid">
             <ExpertiseCard
-              icon="🧠"
+              icon={FiActivity}
               title="Artificial Intelligence"
               text="Machine Learning, Deep Learning, NLP, Generative AI and LLM concepts."
             />
 
             <ExpertiseCard
-              icon="📊"
+              icon={FiBarChart2}
               title="Data & Analytics"
               text="Data preprocessing, exploratory analysis, visualization and business insights."
             />
 
             <ExpertiseCard
-              icon="⚙️"
+              icon={FiCode}
               title="Application Development"
               text="React.js, HTML, CSS, REST APIs and API integration."
             />
@@ -454,7 +492,10 @@ function App() {
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="section content-section">
+      <section
+        id="skills"
+        className="section content-section"
+      >
         <div className="container">
           <SectionHeading
             eyebrow="03 / SKILLS"
@@ -463,36 +504,43 @@ function App() {
           />
 
           <div className="skills-grid">
-            {Object.entries(skills).map(([category, items], index) => (
-              <motion.div
-                className="skill-card"
-                key={category}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.04 }}
-              >
-                <div className="skill-card-header">
-                  <span className="skill-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+            {Object.entries(skills).map(
+              ([category, items], index) => (
+                <motion.div
+                  className="skill-card"
+                  key={category}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: index * 0.04,
+                  }}
+                >
+                  <div className="skill-card-header">
+                    <span className="skill-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
 
-                  <h3>{category}</h3>
-                </div>
+                    <h3>{category}</h3>
+                  </div>
 
-                <div className="skill-tags">
-                  {items.map((skill) => (
-                    <span key={skill}>{skill}</span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+                  <div className="skill-tags">
+                    {items.map((skill) => (
+                      <span key={skill}>{skill}</span>
+                    ))}
+                  </div>
+                </motion.div>
+              )
+            )}
           </div>
         </div>
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="section projects-section">
+      <section
+        id="projects"
+        className="section projects-section"
+      >
         <div className="container">
           <SectionHeading
             eyebrow="04 / PROJECTS"
@@ -501,60 +549,72 @@ function App() {
           />
 
           <div className="projects-grid">
-            {projects.map((project, index) => (
-              <motion.article
-                className="project-card"
-                key={project.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.08,
-                }}
-                whileHover={{ y: -8 }}
-              >
-                <div className="project-top">
-                  <span className="project-icon">
-                    {project.icon}
+            {projects.map((project, index) => {
+              const ProjectIcon = project.icon;
+
+              return (
+                <motion.article
+                  className="project-card"
+                  key={project.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.08,
+                  }}
+                  whileHover={{ y: -8 }}
+                >
+                  <div className="project-top">
+                    <span className="project-icon">
+                      <ProjectIcon />
+                    </span>
+
+                    <span className="project-index">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  <span className="project-category">
+                    {project.category}
                   </span>
 
-                  <span className="project-index">
-                    0{index + 1}
-                  </span>
-                </div>
+                  <h3>{project.title}</h3>
 
-                <span className="project-category">
-                  {project.category}
-                </span>
+                  <p>{project.description}</p>
 
-                <h3>{project.title}</h3>
+                  <div className="project-tech">
+                    {project.technologies.map((tech) => (
+                      <span key={tech}>{tech}</span>
+                    ))}
+                  </div>
 
-                <p>{project.description}</p>
+                  <div className="project-actions">
+                    <button
+                      className="small-button"
+                      onClick={() =>
+                        setSelectedProject(project)
+                      }
+                    >
+                      Details
+                    </button>
 
-                <div className="project-tech">
-                  {project.technologies.map((tech) => (
-                    <span key={tech}>{tech}</span>
-                  ))}
-                </div>
-
-                <div className="project-actions">
-                  <button
-                    className="small-button"
-                    onClick={() => setSelectedProject(project)}
-                  >
-                    Details
-                  </button>
-
-                  <button
-                    className="github-button"
-                    onClick={() => openGithub(project.github)}
-                  >
-                    GitHub ↗
-                  </button>
-                </div>
-              </motion.article>
-            ))}
+                    <button
+                      className="github-button"
+                      onClick={() =>
+                        openGithub(project.github)
+                      }
+                    >
+                      GitHub
+                      <FiArrowUpRight />
+                    </button>
+                  </div>
+                </motion.article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -585,10 +645,10 @@ function App() {
                 >
                   <div className="github-card-top">
                     <span className="github-symbol">
-                      ◉
+                      <FiGithub />
                     </span>
 
-                    <span>↗</span>
+                    <FiExternalLink />
                   </div>
 
                   <h3>{repo.name}</h3>
@@ -603,7 +663,10 @@ function App() {
                       <span>{repo.language}</span>
                     )}
 
-                    <span>★ {repo.stargazers_count}</span>
+                    <span>
+                      <FiStar />
+                      {repo.stargazers_count}
+                    </span>
                   </div>
                 </motion.a>
               ))}
@@ -612,12 +675,14 @@ function App() {
             <div className="loading-box">
               GitHub repositories could not be loaded.
               <br />
+
               <a
                 href="https://github.com/Swathi550"
                 target="_blank"
                 rel="noreferrer"
               >
-                Visit GitHub →
+                Visit GitHub
+                <FiArrowUpRight />
               </a>
             </div>
           )}
@@ -629,14 +694,18 @@ function App() {
               rel="noreferrer"
               className="secondary-button"
             >
-              View GitHub Profile ↗
+              View GitHub Profile
+              <FiArrowUpRight />
             </a>
           </div>
         </div>
       </section>
 
       {/* EXPERIENCE */}
-      <section id="experience" className="section content-section">
+      <section
+        id="experience"
+        className="section content-section"
+      >
         <div className="container">
           <SectionHeading
             eyebrow="06 / EXPERIENCE"
@@ -705,7 +774,9 @@ function App() {
 
                 <h3>HSC XII — Bio-Maths</h3>
 
-                <p>Carmel Central School, Valappad</p>
+                <p>
+                  Carmel Central School, Valappad
+                </p>
 
                 <strong>86.4%</strong>
               </div>
@@ -717,7 +788,9 @@ function App() {
 
                 <h3>SSLC</h3>
 
-                <p>Carmel Central School, Valappad</p>
+                <p>
+                  Carmel Central School, Valappad
+                </p>
 
                 <strong>92.3%</strong>
               </div>
@@ -737,7 +810,9 @@ function App() {
                     key={cert.title}
                     whileHover={{ x: 5 }}
                   >
-                    <span className="cert-icon">✦</span>
+                    <span className="cert-icon">
+                      <FiAward />
+                    </span>
 
                     <div>
                       <h3>{cert.title}</h3>
@@ -788,7 +863,8 @@ function App() {
               className="primary-button"
               onClick={() => setResumeOpen(true)}
             >
-              Preview Resume ↗
+              Preview Resume
+              <FiArrowUpRight />
             </button>
 
             <a
@@ -803,7 +879,10 @@ function App() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="section contact-section">
+      <section
+        id="contact"
+        className="section contact-section"
+      >
         <div className="container">
           <SectionHeading
             eyebrow="09 / CONTACT"
@@ -817,10 +896,13 @@ function App() {
                 className="contact-card"
                 whileHover={{ y: -5 }}
               >
-                <span className="contact-icon">✉</span>
+                <span className="contact-icon">
+                  <FiMail />
+                </span>
 
                 <div>
                   <small>EMAIL</small>
+
                   <a href="mailto:swathiii2004.vineetha@gmail.com">
                     swathiii2004.vineetha@gmail.com
                   </a>
@@ -831,10 +913,13 @@ function App() {
                 className="contact-card"
                 whileHover={{ y: -5 }}
               >
-                <span className="contact-icon">in</span>
+                <span className="contact-icon">
+                  <FiLinkedin />
+                </span>
 
                 <div>
                   <small>LINKEDIN</small>
+
                   <a
                     href="https://www.linkedin.com/in/swathiparameswaran/"
                     target="_blank"
@@ -849,10 +934,13 @@ function App() {
                 className="contact-card"
                 whileHover={{ y: -5 }}
               >
-                <span className="contact-icon">⌘</span>
+                <span className="contact-icon">
+                  <FiGithub />
+                </span>
 
                 <div>
                   <small>GITHUB</small>
+
                   <a
                     href="https://github.com/Swathi550"
                     target="_blank"
@@ -864,7 +952,9 @@ function App() {
               </motion.div>
 
               <div className="visitor-card">
-                <span>👀</span>
+                <span>
+                  <FiEye />
+                </span>
 
                 <div>
                   <strong>{visitorCount}</strong>
@@ -883,6 +973,7 @@ function App() {
               <div className="form-row">
                 <label>
                   Name
+
                   <input
                     type="text"
                     name="name"
@@ -893,6 +984,7 @@ function App() {
 
                 <label>
                   Email
+
                   <input
                     type="email"
                     name="email"
@@ -904,6 +996,7 @@ function App() {
 
               <label>
                 Message
+
                 <textarea
                   name="message"
                   rows="7"
@@ -917,7 +1010,7 @@ function App() {
                 className="primary-button form-button"
               >
                 Send Message
-                <span>↗</span>
+                <FiArrowUpRight />
               </button>
 
               <p className="form-note">
@@ -977,21 +1070,44 @@ function App() {
           >
             <motion.div
               className="modal project-modal"
-              initial={{ opacity: 0, scale: 0.92, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.92, y: 20 }}
-              onClick={(event) => event.stopPropagation()}
+              initial={{
+                opacity: 0,
+                scale: 0.92,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.92,
+                y: 20,
+              }}
+              onClick={(event) =>
+                event.stopPropagation()
+              }
             >
               <button
                 className="modal-close"
-                onClick={() => setSelectedProject(null)}
+                onClick={() =>
+                  setSelectedProject(null)
+                }
+                aria-label="Close project details"
               >
-                ×
+                <FiX />
               </button>
 
-              <span className="project-icon large">
-                {selectedProject.icon}
-              </span>
+              {(() => {
+                const ProjectIcon = selectedProject.icon;
+
+                return (
+                  <span className="project-icon large">
+                    <ProjectIcon />
+                  </span>
+                );
+              })()}
 
               <span className="project-category">
                 {selectedProject.category}
@@ -1004,9 +1120,11 @@ function App() {
               </p>
 
               <div className="project-tech modal-tech">
-                {selectedProject.technologies.map((tech) => (
-                  <span key={tech}>{tech}</span>
-                ))}
+                {selectedProject.technologies.map(
+                  (tech) => (
+                    <span key={tech}>{tech}</span>
+                  )
+                )}
               </div>
 
               <div className="modal-actions">
@@ -1016,12 +1134,15 @@ function App() {
                     openGithub(selectedProject.github)
                   }
                 >
-                  View GitHub ↗
+                  View GitHub
+                  <FiArrowUpRight />
                 </button>
 
                 <button
                   className="secondary-button"
-                  onClick={() => setSelectedProject(null)}
+                  onClick={() =>
+                    setSelectedProject(null)
+                  }
                 >
                   Close
                 </button>
@@ -1043,21 +1164,36 @@ function App() {
           >
             <motion.div
               className="modal resume-modal"
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.92 }}
-              onClick={(event) => event.stopPropagation()}
+              initial={{
+                opacity: 0,
+                scale: 0.92,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.92,
+              }}
+              onClick={(event) =>
+                event.stopPropagation()
+              }
             >
               <button
                 className="modal-close"
                 onClick={() => setResumeOpen(false)}
+                aria-label="Close resume"
               >
-                ×
+                <FiX />
               </button>
 
               <div className="resume-modal-header">
                 <div>
-                  <span className="eyebrow">RESUME</span>
+                  <span className="eyebrow">
+                    RESUME
+                  </span>
+
                   <h2>Swathi Parameswaran</h2>
                 </div>
 
@@ -1085,11 +1221,21 @@ function App() {
         {toast && (
           <motion.div
             className="toast"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 30 }}
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              y: 30,
+            }}
           >
-            ✓ {toast}
+            <FiCheck />
+            {toast}
           </motion.div>
         )}
       </AnimatePresence>
@@ -1097,12 +1243,22 @@ function App() {
   );
 }
 
-function SectionHeading({ eyebrow, title, description }) {
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+}) {
   return (
     <motion.div
       className="section-heading"
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{
+        opacity: 0,
+        y: 25,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
       viewport={{ once: true }}
     >
       <span className="eyebrow">{eyebrow}</span>
@@ -1114,13 +1270,19 @@ function SectionHeading({ eyebrow, title, description }) {
   );
 }
 
-function ExpertiseCard({ icon, title, text }) {
+function ExpertiseCard({
+  icon: Icon,
+  title,
+  text,
+}) {
   return (
     <motion.div
       className="expertise-card"
       whileHover={{ y: -7 }}
     >
-      <span className="expertise-icon">{icon}</span>
+      <span className="expertise-icon">
+        <Icon />
+      </span>
 
       <h3>{title}</h3>
 
@@ -1139,16 +1301,28 @@ function TimelineItem({
   return (
     <motion.div
       className="timeline-item"
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{
+        opacity: 0,
+        x: -20,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
       viewport={{ once: true }}
     >
       <div className="timeline-marker">
-        <span className={current ? "active-marker" : ""}></span>
+        <span
+          className={
+            current ? "active-marker" : ""
+          }
+        ></span>
       </div>
 
       <div className="timeline-content">
-        <span className="timeline-year">{year}</span>
+        <span className="timeline-year">
+          {year}
+        </span>
 
         <h3>{title}</h3>
 

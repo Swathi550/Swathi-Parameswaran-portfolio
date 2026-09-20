@@ -68,6 +68,11 @@ a {
   text-decoration: none;
 }
 
+svg {
+  display: block;
+  flex-shrink: 0;
+}
+
 .app {
   min-height: 100vh;
   overflow: hidden;
@@ -218,6 +223,10 @@ a {
 .theme-button {
   width: 38px;
   padding: 0;
+
+  display: grid;
+  place-items: center;
+
   font-size: 17px;
 }
 
@@ -861,6 +870,11 @@ a {
 
   font-size: 10px;
   font-weight: 700;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 .small-button {
@@ -900,6 +914,11 @@ a {
 .loading-box a {
   color: #8c72ff;
   font-weight: 700;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 .github-grid {
@@ -961,6 +980,12 @@ a {
 
   color: var(--muted);
   font-size: 10px;
+}
+
+.repo-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .github-profile-button-wrapper {
@@ -1303,6 +1328,8 @@ a {
 }
 
 .visitor-card > span {
+  display: grid;
+  place-items: center;
   font-size: 22px;
 }
 
@@ -1547,6 +1574,10 @@ a {
   right: 22px;
   bottom: 22px;
   z-index: 3000;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 
   padding: 13px 17px;
 
