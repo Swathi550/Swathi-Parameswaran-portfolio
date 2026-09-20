@@ -143,19 +143,47 @@ function App() {
       : "light-theme";
   }, [darkMode]);
 
+  /*
+    VISITOR COUNTER
+
+    Counts the browser only once.
+
+    First visit:
+      - increase the count
+      - save that this browser has visited
+
+    Refresh:
+      - do NOT increase the count
+
+    Reopen the website:
+      - do NOT increase the count in the same browser
+  */
   useEffect(() => {
     const storedCount = Number(
       localStorage.getItem("swathi_portfolio_visitors") || "0"
     );
 
-    const newCount = storedCount + 1;
-
-    localStorage.setItem(
-      "swathi_portfolio_visitors",
-      String(newCount)
+    const alreadyVisited = localStorage.getItem(
+      "swathi_portfolio_visited"
     );
 
-    setVisitorCount(newCount);
+    if (!alreadyVisited) {
+      const newCount = storedCount + 1;
+
+      localStorage.setItem(
+        "swathi_portfolio_visitors",
+        String(newCount)
+      );
+
+      localStorage.setItem(
+        "swathi_portfolio_visited",
+        "true"
+      );
+
+      setVisitorCount(newCount);
+    } else {
+      setVisitorCount(storedCount);
+    }
   }, []);
 
   useEffect(() => {
@@ -774,9 +802,7 @@ function App() {
 
                 <h3>HSC XII — Bio-Maths</h3>
 
-                <p>
-                  Carmel Central School, Valappad
-                </p>
+                <p>Carmel Central School, Valappad</p>
 
                 <strong>86.4%</strong>
               </div>
@@ -788,9 +814,7 @@ function App() {
 
                 <h3>SSLC</h3>
 
-                <p>
-                  Carmel Central School, Valappad
-                </p>
+                <p>Carmel Central School, Valappad</p>
 
                 <strong>92.3%</strong>
               </div>
