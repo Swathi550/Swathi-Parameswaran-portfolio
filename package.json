@@ -12,7 +12,8 @@
     "@vitejs/plugin-react": "latest",
     "motion": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-icons": "^5.7.0"
   },
   "devDependencies": {
     "eslint": "latest",
